@@ -1,0 +1,2 @@
+use inventory;
+select * from desktops;

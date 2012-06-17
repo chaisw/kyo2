@@ -1,0 +1,12 @@
+Auto-fill computer info
+Allow employee Kyozou login
+Add web search for product image
+Add Browse for image file
+Implement version control
+Auto-watermark (User selectable placement and size)
+Add description prompt
+Add price prompt
+Add condition selector
+Local database of product info and general description (SQL)
+Allow current listing states in local database (ebay, store, sold, etc.)
+Add bold/italic/underline to product description textbox
