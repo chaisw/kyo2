@@ -1,28 +1,43 @@
 #! /usr/bin/bash
-
+#sudo su
+rm -f inf
 dmidecode > dmid
+dmidecode -t1 > dmid1
 
-dmidecode -t1 | grep -E "Manufac|Product" | awk '
-BEGIN{ FS=": "}
+cat dmid1 | grep -E "Manufac|Product" | awk '
+BEGIN{FS=": "}
 {print $2}' > inf
 
 dmidecode -t4 | grep -E "Socket Des|Family:|Manufac|Max Speed|Voltage" | awk '
-BEGIN{ FS=": "}
+BEGIN{FS=": "}
 {print $2}' >> inf
 
 cat dmid | grep -i -E -c1 "Bluetooth" >> inf
 cat dmid | grep -i -E -c1 "1394" >> inf
 
-dmidecode -t17 | grep -E "Type:" | awk '
-BEGIN{FS=": ";print $2}{}
-END{print $2;
-print NF}'>> inf
+dmidecode -t17 > dmid17
+dmidecode -t17 | grep -E  -m 1 "Type: D" | awk '\
+BEGIN{FS=": "}END{print $2; print NF}' >> inf
 
-dmidecode -t17 | grep -E "Size:" | awk '
-BEGIN{FS=": ";ORS=", "}
-{if(FNR==NF) ORS=" ";
-print $2}' >> inf
+cat dmid17 | grep -E "Size:" | awk '
+BEGIN{FS=": ";ORS=""}
+{if(FNR==NF){ORS="\n";OFS="!"}
+print $2}' | tr -d ' \t\r\fM' | tr "B" " " >> inf;echo
+
+cat dmid1 | grep "Serial N" | awk '
+BEGIN{FS=": "}
+{print $2}' >> inf
+
+xdpyinfo | grep 'dimensions:' | awk '
+BEGIN{FS=" "}
+{print $2}' >> inf
+
+fdisk -l | grep "Disk /dev/s" | awk '
+BEGIN{FS=" "}
+{print $3, $4}' | tr -d "," >> inf
 
 rm -f dmid
+rm -f dmid1
+rm -f dmid17
 
 python run.py

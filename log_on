@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.kyozou.com/index.php/main/login-seller.html" />
+<title>log_on</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">log_on</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/index.php/main/login-seller.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=UserName</td>
+	<td>cwhiteside</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Password</td>
+	<td>stspassword</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=pw</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://my1.kyozou.com/Modules/Inventory/startaddproduct.aspx?tid=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_UpdateButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=ProductCategoryChooser_CategoryChooser_PCC</td>
+	<td>label=Electronics / Accessories</td>
+</tr>
+<tr>
+	<td>answerOnNextPrompt</td>
+	<td>manu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_TImage1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertPrompt</td>
+	<td>Type new manufacturer: </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_UpdateButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>answerOnNextPrompt</td>
+	<td>mod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_TImage3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertPrompt</td>
+	<td>Type new model: </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_UpdateButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>answerOnNextPrompt</td>
+	<td>mod_des</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_TImage5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertPrompt</td>
+	<td>Type new model description: </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ProductCategoryChooser_UpdateButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=ProductCategoryChooser_Proceed</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

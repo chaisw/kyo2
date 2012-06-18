@@ -11,3 +11,4 @@ Local database of product info and general description (SQL)
 Allow current listing states in local database (ebay, store, sold, etc.)
 Add bold/italic/underline to product description textbox
 Expand to infinity and beyond!
+Implement SymmetricDS on SQL server
